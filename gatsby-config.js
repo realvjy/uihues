@@ -28,6 +28,22 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-apiserver`,
+      options: {
+        url: `https://spreadsheets.google.com/feeds/cells/1WEDq6VHI4JEE7GJtJDhH1ArX2ozXeTzZWJrgCtpcVrM/1/public/full?alt=json`,
+        method: `get`,
+        headers: {
+          "Content-Type" : `application/json`
+        },
+        typePrefix: `internal__`,
+        name: `posts`,
+        params: {
+          results: 100
+        },
+        verboseOutput: true,
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
