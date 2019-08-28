@@ -36,12 +36,11 @@ module.exports = {
         headers: {
           "Content-Type" : `application/json`
         },
-        typePrefix: `internal__`,
+        typePrefix: `uihues_`,
         name: `posts`,
-        params: {
-          results: 100
-        },
-        verboseOutput: true,
+        // params: {
+        //   results: 100
+        // },
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

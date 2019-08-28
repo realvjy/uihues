@@ -23,6 +23,8 @@ const Layout = ({ children }) => {
     }
   `)
 
+  
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -33,9 +35,9 @@ const Layout = ({ children }) => {
       </section>
       <footer>
         <div className="content-wrap">
-        © {new Date().getFullYear()}, Built with
+        designing and devloping by
           {` `}
-          <a href="#">realvjy</a>
+          <a href="https://vijayverma.co">realvjy</a>
         </div>
       </footer>
     </>
