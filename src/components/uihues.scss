@@ -58,22 +58,26 @@ body,html{
                 >li{
                     display: inline-block;
                     width:25%;
-                    height: 80px;
+                    height: 100px;
                     text-align: center;
                     &:first-child{
-                        background: red;
                         border-radius: 8px 0 0 8px;
                     }
                     &:last-child{
-                        background: blue;
                         border-radius: 0 8px 8px 0;
+                    }
+                    &:hover{
+                        opacity: 0.9
                     }
                 }
             }
             .hues{
                 a{
                     display: block;
-                    padding-top: 85px;
+                    padding-top: 105px;
+                    &:hover{
+                        opacity: 0.8;
+                    }
                 }
             }
         }
