@@ -1,6 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+import Copy from "../images/copy.svg"
+import Dwn from "../images/download.svg"
+import Tippy from '@tippy.js/react'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+
 
 const UIHues = () => {
     const data = useStaticQuery(graphql`
@@ -22,10 +28,11 @@ const UIHues = () => {
     const hueNum = []
     // const uniqueHues = [];
     // {
-    //     "number": "Omolon",
+    //     "number": "huenum",
     //     "hues_palette": ["#091E3A", "#2F80ED", "#2D9EE0"],
     //     "created_date": "8-9-1990"
     // },
+ 
 
     return (
         <>
@@ -52,12 +59,41 @@ const UIHues = () => {
             {hueNum.reverse().map((color_data, i) => (
                <div className="color-wrap" key={i}>
                <div className="color-box" hues={`#`+color_data.number} key={i}>
-                   <h3>#{color_data.number}</h3>
-                   <h4>add</h4>
-                   <ul huesvalue={color_data.hues_palette} date={color_data.created_date}>
+                   <div className="hue-meta">
+                       <h3 className="hue-num">#{color_data.number}</h3>
+                       <ul className="hue-atn">
+                           <li>
+                            <Tippy content="Download PNG"
+                                animation="shift-away"
+                                size="small"
+                                placement="left-end"
+                                delay={[100, 0]}
+                            >
+                            <a href="#"><Dwn /></a>
+                            </Tippy>
+                           </li>
+                       </ul>
+                    </div>
+                   <ul huesvalue={color_data.hues_palette} date={color_data.created_date} className="color-hex">
                     {/* Extracting Color Hex */}
                     {color_data.hues_palette.map((hue_hex, n) =>(
-                        <li className="hues" key={n} style={{backgroundColor:hue_hex}} colorhex={hue_hex}><a href="#">{hue_hex}</a></li>
+                        <CopyToClipboard text={hue_hex}>
+                            <li className="hues" key={n} style={{backgroundColor:hue_hex}} colorhex={hue_hex}>
+                                <div className="copyic_wrap">
+                                        <Copy />
+                                </div>
+                                <Tippy content="Copied 😍"
+                                    animation="fade"
+                                    size="small"
+                                    placement="bottom"
+                                    trigger="click"
+                                    duration= "0"
+                                    delay="10"
+                                >
+                                    <span className="huehex">{hue_hex}</span>
+                                </Tippy>
+                            </li>
+                        </CopyToClipboard>
                     ))}
                     </ul>
                    
