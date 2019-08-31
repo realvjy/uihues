@@ -82,13 +82,16 @@ const UIHues = () => {
                                 <div className="copyic_wrap">
                                         <Copy />
                                 </div>
-                                <Tippy content="Copied 😍"
+                                <Tippy content="Copied"
                                     animation="fade"
                                     size="small"
                                     placement="bottom"
                                     trigger="click"
                                     duration= "0"
                                     delay="10"
+                                    onShow={instance => (setTimeout(() => {
+                                        instance.hide()
+                                    }, 3000))}
                                 >
                                     <span className="huehex">{hue_hex}</span>
                                 </Tippy>
