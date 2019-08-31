@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `uihues`,
-    description: `color and gradient insipration`,
+    description: `uihues is collection of beautiful handcrafted colors and gradients`,
     author: `@realvjy`,
   },
   plugins: [

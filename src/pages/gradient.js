@@ -8,7 +8,7 @@ import UihuesGrdData from '../data/uihues-grd-data'
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Gradients" />
     <UihuesGrdData/>
   </Layout>
 )
