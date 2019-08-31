@@ -22,10 +22,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#f6f6f6`,
+        theme_color: `#1c1c1c`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/hues-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -41,6 +41,24 @@ module.exports = {
         // params: {
         //   results: 100
         // },
+        entitiesArray: [
+          {
+            url: `https://spreadsheets.google.com/feeds/cells/1WEDq6VHI4JEE7GJtJDhH1ArX2ozXeTzZWJrgCtpcVrM/2/public/full?alt=json`,
+            method: `get`,
+            headers: {
+              "Content-Type": "application/json"
+            },
+            name: `gradients`
+          },
+          {
+            url: `https://spreadsheets.google.com/feeds/cells/1WEDq6VHI4JEE7GJtJDhH1ArX2ozXeTzZWJrgCtpcVrM/1/public/full?alt=json`,
+            method: `get`,
+            headers: {
+              "Content-Type": "application/json"
+            },
+            name: `posts`
+          }
+        ]
       }
     },
     {
@@ -51,6 +69,23 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `UA-133647344-1`,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'scss', 'html', 'js', 'svg']
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -8,24 +8,24 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 
-const UIHues = () => {
+const UIHuesGrd = () => {
     const data = useStaticQuery(graphql`
-    query UIHuesDataQuery {
-        allUihuesPosts {
-                nodes {
-                    feed {
-                        entry {
-                            content {
-                                _t
-                                type
-                            }
-                        }
-                    }
+    query UIHuesGrdDataQuery {
+        allUihuesGradients(skip: 1) {
+            nodes {
+            feed {
+                entry {
+                content {
+                    type
+                    _t
+                }
                 }
             }
+            }
+        }
         }
     `)
-
+    
     const hueNum = []
     // const uniqueHues = [];
     // {
@@ -34,27 +34,31 @@ const UIHues = () => {
     //     "created_date": "8-9-1990"
     // },
  
+    
 
     return (
         <>
-            {data.allUihuesPosts.nodes.map(huenode => {
+            {data.allUihuesGradients.nodes.map(huenode => {
                 let color_data = huenode.feed.entry
                 for (let i = 6; i < color_data.length; i+=6) {
                     let number = color_data[i].content._t
-                    let hues_palette = [color_data[i+1].content._t, color_data[i+2].content._t, color_data[i+3].content._t, color_data[i+4].content._t]
+                    let hue_hex1 = color_data[i+1].content._t 
+                    let hue_hex2 = color_data[i+2].content._t 
+                    let hue_hex3 = color_data[i+3].content._t
+                    let angle = color_data[i+4].content._t
                     let created_date = color_data[i+5].content._t
-                    let new_hues = {"number" : number, "hues_palette": hues_palette, "created_date": created_date}
+                    let new_hues = {"number" : number, "hue_hex1" : hue_hex1, "hue_hex2" : hue_hex2, "hue_hex3" : hue_hex3, "angle": angle,"created_date": created_date}
                     hueNum.push(new_hues)
                 }
                 
             })}
-
-            <div className="uihues-nav">
+             <div className="uihues-nav">
                 <ul>
-                    <li><Link to="/" className="active">Colors</Link></li>
-                    <li><Link to="/gradient">Gradients</Link></li>
+                    <li><Link to="/">Colors</Link></li>
+                    <li><Link to="/gradient" className="active">Gradients</Link></li>
                 </ul>
             </div>
+            
             <div className="uihues-container">
             {hueNum.reverse().map((color_data, i) => (
                <div className="color-wrap" key={i}>
@@ -62,27 +66,25 @@ const UIHues = () => {
                    <div className="hue-meta">
                        <h3 className="hue-num">#{color_data.number}</h3>
                        <ul className="hue-atn">
-                           <li key={i}>
+                           <li>
                             <Tippy content="coming soon.."
                                 animation="shift-away"
                                 size="small"
                                 placement="left-end"
                                 delay={[100, 0]}
-                                key={i}>
-                            <a href="# key={i}"><Dwn /></a>
+                            >
+                            <a href="#"><Dwn /></a>
                             </Tippy>
                            </li>
                        </ul>
                     </div>
-                   <ul huesvalue={color_data.hues_palette} date={color_data.created_date} className="color-hex">
-                    {/* Extracting Color Hex */}
-                    {color_data.hues_palette.map((hue_hex, n) =>(
-                        <CopyToClipboard text={hue_hex} key={n}>
-                            <li className="hues" key={n} style={{backgroundColor:hue_hex}} colorhex={hue_hex}>
-                                <div className="copyic_wrap" key={n}>
-                                        <Copy key={n} />
-                                </div>
-                                <Tippy content="Copied"
+                    <CopyToClipboard text={`background: linear-gradient(${color_data.angle}deg, ${color_data.hue_hex1} 0%, ${color_data.hue_hex2} 100%);`} key={i}>
+                    <ul date={color_data.created_date} className="color-hex">
+                            <li className="hues gradient" style={{background:`linear-gradient(${color_data.angle}deg, ${color_data.hue_hex1}, ${color_data.hue_hex2})`}}>
+                            <div className="copyic_wrap" key={i}>
+                                        <Copy key={i} /> <span className="csss">Copy CSS</span>
+                            </div>
+                            <Tippy content="Copied"
                                     animation="fade"
                                     size="small"
                                     placement="bottom"
@@ -93,14 +95,11 @@ const UIHues = () => {
                                         instance.hide()
                                     }, 600))}
                                 >
-                                    <span className="huehex" key={n}>{hue_hex}</span>
+                                <span className="grdhex" key={i}>{color_data.hue_hex1} {color_data.hue_hex2} {color_data.angle}°</span>
                                 </Tippy>
                             </li>
-                        </CopyToClipboard>
-                    ))}
-                    </ul>
-                   
-                   
+                        </ul>
+                    </CopyToClipboard>
                </div>  
                </div>
             ))}
@@ -110,4 +109,4 @@ const UIHues = () => {
 
 }
 
-export default UIHues
+export default UIHuesGrd

@@ -12,6 +12,7 @@ import UihuesData from '../data/uihues-data'
 const IndexPage = () => (
   <Layout>
     <SEO title="uihues - colors" />
+    <UihuesData/>
   </Layout>
 )
 

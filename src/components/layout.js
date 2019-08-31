@@ -35,9 +35,11 @@ const Layout = ({ children }) => {
       </section>
       <footer>
         <div className="content-wrap">
-        designing and devloping by
-          {` `}
-          <a href="https://vijayverma.co">realvjy</a>
+          <div className="credit">
+            designed + devloped by
+              {` `}
+              <a href="https://dribbble.com/realvjy">vijay verma</a>
+            </div>
         </div>
       </footer>
     </>

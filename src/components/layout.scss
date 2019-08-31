@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -45,6 +45,7 @@ table {
 
 html, body {
   font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 *:focus:not(.focus-visible) {
   outline: none;
@@ -53,6 +54,9 @@ html, body {
 .content-wrap{
   width: 900px;
   margin: 0 auto;
+   @media (max-width: 900px){
+      width: 100%;
+    }
 }
 
 
@@ -85,24 +89,70 @@ $bg-grey: #F6F6F6;
 $white: #ffffff;
 $coal: #393939;
 $grey-2: #969696;
+// Breakpoints
+$mobile-landscape: 30rem; // 480px
+$tablet: 40rem; // 640px
+$tablet-wide: 48rem; // 768px
+$desktop: 64rem; // 1024px
+$widescreen: 71.25rem; // 1140px
+
 
 body,html{
     background: $bg-grey;
 }
 .uihues-nav{
     ul{
+      padding: 18px;
         >li{
             display:inline-block;
+            margin-right: 30px;
+            a{
+              font-size:20px;
+              display:block;
+              text-decoration: none;
+              padding: 16px 0;
+              color: $grey-2;
+              &:hover{
+                color: $coal;
+              }
+              &.active{
+                color: $coal;
+                border-bottom: 2px solid #FF0404;
+                font-weight: 500;
+              }
+            }
         }
     }
 }
+
+header{
+  background: $white;
+  .top-header{
+    padding: 18px 18px 24px 18px;
+  }
+  .logo{
+    max-height: 50px;
+    margin-bottom: 20px;
+  }
+  p{
+    font-size: 20px;
+    font-weight:300;
+    line-height: 1.6;
+  }
+}
+
+
 
 .uihues-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 100px;
     .color-wrap{
         width: 50%;
+        @media (max-width: $tablet-wide){
+          width: 100%;
+        }
         .color-box{
             margin: 18px;
             .hue-meta{
@@ -156,23 +206,41 @@ body,html{
                     width:25%;
                     height: 115px;
                     text-align: center;
-                    &:first-child{
+                   
+                    &:hover{
+                        opacity: 0.9
+                    }
+                    &.gradient{
+                      width: 100%;
+                      border-radius: 8px;
+                      text-align: left;
+                      cursor: pointer;
+                      
+                      .grdhex{
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        display: block;
+                        padding-top: 122px;
+                        padding-bottom: 4px;
+                        text-decoration: none;
+                        color: $coal;
+                        cursor: pointer;
+                      }
+                    }
+                }
+                &:hover{
+                     box-shadow: 0px 8px 40px rgba(141, 140, 163, 0.3);
+                }
+            }
+            
+            .hues{
+                position: relative;
+                 &:first-child{
                         border-radius: 8px 0 0 8px;
                     }
                     &:last-child{
                         border-radius: 0 8px 8px 0;
                     }
-                    &:hover{
-                        opacity: 0.9
-                    }
-                }
-                &:hover{
-                     box-shadow: 0px 8px 40px rgba(141, 140, 163, 0.3);
-
-                }
-            }
-            .hues{
-                position: relative;
                 .copyic_wrap{
                       text-align: left;
                       position: absolute;
@@ -180,11 +248,18 @@ body,html{
                       top: 10px; 
                       opacity: 0;
                       font-size: 12px;
+                      vertical-align: middle;
                       svg{
                           height: 18px;
                           width: 18px;
                           stroke: rgba(0,0,0, 0.3);
-                      }                  
+                          vertical-align: middle;
+                      }  
+                      span.csss{
+                        font-size: 12px;
+                        vertical-align: middle;
+                        opacity: 0.3
+                      }                
                 }
                 &:hover{
                     .copyic_wrap{
@@ -209,4 +284,34 @@ body,html{
         
 
     }
+}
+
+footer{
+  font-weight: 300;
+  .credit{
+    padding: 18px;
+  }
+  a{
+    text-decoration: none;
+    font-weight: 600;
+    color: $coal;
+    &:hover{
+      color: darken($coal, 10%);
+    }
+  }
+}
+
+.ops-404{
+  padding: 100px 18px;
+  h2{
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  a{
+    text-decoration: none;
+    color: blue;
+    &:hover{
+      color: $coal;
+    }
+  }
 }

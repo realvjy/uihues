@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import UihuesData from '../data/uihues-data'
+import UihuesGrdData from '../data/uihues-grd-data'
 
 
 const SecondPage = () => (
   <Layout>
     <SEO title="Page two" />
-    <UihuesData/>
+    <UihuesGrdData/>
   </Layout>
 )
 
