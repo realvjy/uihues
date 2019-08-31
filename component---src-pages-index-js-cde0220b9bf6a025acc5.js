@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{224:function(e,a,n){"use strict";n.r(a);var t=n(0),l=n.n(t),r=(n(48),n(220)),u=(n(227),n(154),n(219)),c=n(221);a.default=function(){return l.a.createElement(r.a,null,l.a.createElement(u.a,{title:"uihues - colors"}),l.a.createElement(c.a,null))}},227:function(e){e.exports=JSON.parse('{"data":{"placeholderImage":null}}')}}]);
+//# sourceMappingURL=component---src-pages-index-js-cde0220b9bf6a025acc5.js.map
