@@ -11,7 +11,7 @@ const Soon = () => {
           <div className="soon_details">
             <a href="https://instagram.com/uihues"><img src="/logo.svg" className="logo"/></a>
             <p>
-              A collection of handcrafted <strong>colors</strong> and <strong>gradients</strong> for designers and developer. Easily accesible from all design tools - Figma, Sketch, XD and more.
+              A collection of handcrafted <strong>colors</strong> and <strong>gradients</strong> for designers and developer. Easily accesible from all design tools: Figma, Sketch, XD and more.
             </p>
             <h3>SUMMER 2020</h3>
             <div className="credit">
