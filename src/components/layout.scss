@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -126,9 +126,9 @@ body,html{
 }
 
 header{
-  background: $white;
   .top-header{
-    padding: 18px 18px 24px 18px;
+    img{
+    }
   }
   .logo{
     max-height: 50px;
@@ -190,23 +190,23 @@ header{
                     }
                 }
             }
-            
+
             ul.color-hex{
                 padding: 8px;
                 background: $white;
                 border-radius: 14px;
                 box-shadow: 0px 0px 8px rgba(141, 140, 163, 0.2);
-                -webkit-transition: all 0.3s ease;                  
-                -moz-transition: all 0.3s ease;                 
-                -o-transition: all 0.3s ease;   
-                -ms-transition: all 0.3s ease;          
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 >li{
                     display: inline-block;
                     width:25%;
                     height: 115px;
                     text-align: center;
-                   
+
                     &:hover{
                         opacity: 0.9
                     }
@@ -215,7 +215,7 @@ header{
                       border-radius: 8px;
                       text-align: left;
                       cursor: pointer;
-                      
+
                       .grdhex{
                         font-size: 14px;
                         letter-spacing: 1px;
@@ -232,7 +232,7 @@ header{
                      box-shadow: 0px 8px 40px rgba(141, 140, 163, 0.3);
                 }
             }
-            
+
             .hues{
                 position: relative;
                  &:first-child{
@@ -245,7 +245,7 @@ header{
                       text-align: left;
                       position: absolute;
                       left: 10px;
-                      top: 10px; 
+                      top: 10px;
                       opacity: 0;
                       font-size: 12px;
                       vertical-align: middle;
@@ -254,19 +254,19 @@ header{
                           width: 18px;
                           stroke: rgba(0,0,0, 0.3);
                           vertical-align: middle;
-                      }  
+                      }
                       span.csss{
                         font-size: 12px;
                         vertical-align: middle;
                         opacity: 0.3
-                      }                
+                      }
                 }
                 &:hover{
                     .copyic_wrap{
                         opacity: 1;
                     }
                 }
-                span.huehex{  
+                span.huehex{
                     font-size: 14px;
                     letter-spacing: 1px;
                     display: block;
@@ -281,7 +281,7 @@ header{
                 }
             }
         }
-        
+
 
     }
 }
@@ -314,4 +314,103 @@ footer{
       color: $coal;
     }
   }
+}
+
+
+// random color
+html, body {
+    height: 100%;
+    width: 100%;
+     background-color: #fff;
+     -webkit-animation: random 15s infinite;
+     animation: random 15s infinite;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: all ease 0.2s;
+}
+@keyframes  random {
+    5% { background-color: #EE408B; }
+    10% { background-color: #FF0000; }
+    20% { background-color: #7000FF; }
+    30% { background-color: #061FFF; }
+    40% { background-color: #06C3FF; }
+    50% { background-color: #2E2D31; }
+    60% { background-color: #FF5106; }
+    70% { background-color: #1AFF06; }
+    80% { background-color: #FFD600; }
+    90% { background-color: #FF0000; }
+    100% { background-color: #00F0FF; }
+}
+
+/*
+@keyframes mymove{
+    form{background-color: #38dc58; }
+    to{background-color: #9b40f1;}
+}
+YOU CAN USE LIKE IT TOO :d
+*/
+
+.soon_section{
+  height: 100%;
+  width: 100%;
+  .soon_wrapper{
+    background: $white;
+    padding: 64px;
+    margin: 80px;
+    padding-bottom: 44px;
+    border-radius: 36px;
+    -webkit-box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
+    box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
+    @media (max-width: 768px){
+       margin: 0;
+    }
+
+    .soon_details{
+
+      text-align: center;
+      .logo{
+        height: 60px;
+      }
+      p{
+        margin-top: 32px;
+        margin-bottom: 34px;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 160%;
+        @media (max-width: $tablet-wide){
+          font-size: 18px;
+        }
+      }
+      strong{
+        font-weight: 800;
+      }
+      h3{
+        font-size: 32px;
+        letter-spacing: 12px;
+        font-weight: 700;
+        margin-bottom: 44px;
+        line-height: 130%;
+        color: #EE408B;
+      }
+      .credit{
+        padding-top: 32px;
+        font-size: 16px;
+      }
+      a{
+        margin-top: 36px;
+        text-decoration: none;
+        color: #000000;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.center
+{
+  margin:auto;
+  position:absolute;
+  top:0; bottom:0; left:0; right:0;
 }

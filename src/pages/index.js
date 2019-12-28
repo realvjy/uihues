@@ -3,16 +3,15 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import UihuesData from '../data/uihues-data'
+import Soon from '../components/coming-soon'
 
 
-  
+
 const IndexPage = () => (
   <Layout>
     <SEO title="uihues - Handcrafted colors and gradients" />
-    <UihuesData/>
+    <Soon />
   </Layout>
 )
 

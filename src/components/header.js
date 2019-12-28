@@ -7,13 +7,8 @@ const Header = ({ siteTitle }) => (
   <header >
     <div className="content-wrap">
       <div className="top-header">
-        <Link to="/">
-          <img src="/logo.png" className="logo"/>
-        </Link>
-        <p>
-        A Collection of handcrafted colors and gradients
-        </p>
-       
+        
+
       </div>
     </div>
   </header>

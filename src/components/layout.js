@@ -23,25 +23,14 @@ const Layout = ({ children }) => {
     }
   `)
 
-  
+
 
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <section>
-        <main className="content-wrap">
-          {children}
-        </main>
-      </section>
-      <footer>
-        <div className="content-wrap">
-          <div className="credit">
-            designed + devloped by
-              {` `}
-              <a href="https://dribbble.com/realvjy">vijay verma</a>
-            </div>
-        </div>
-      </footer>
+      <main className="content-wrap">
+        {children}
+      </main>
     </>
   )
 }
