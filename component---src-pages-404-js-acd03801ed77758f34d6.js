@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{222:function(e,a,t){"use strict";t.r(a);var n=t(0),l=t.n(n),o=t(220),c=t(219),r=t(48);a.default=function(){return l.a.createElement(o.a,null,l.a.createElement(c.a,{title:"404: Not found"}),l.a.createElement("div",{className:"ops-404"},l.a.createElement("h2",null,"Life is not black and white"),l.a.createElement(r.a,{to:"/"},"Go back and Get Colors")))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-acd03801ed77758f34d6.js.map
