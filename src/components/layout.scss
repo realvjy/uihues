@@ -387,15 +387,15 @@ YOU CAN USE LIKE IT TOO :d
         font-weight: 800;
       }
       h3{
-        font-size: 32px;
+        font-size: 24px;
         letter-spacing: 12px;
         font-weight: 700;
-        margin-bottom: 44px;
+        margin-bottom: 30px;
         line-height: 130%;
         color: #EE408B;
       }
       .credit{
-        padding-top: 32px;
+        padding-top: 24px;
         font-size: 16px;
       }
       a{
@@ -403,10 +403,35 @@ YOU CAN USE LIKE IT TOO :d
         text-decoration: none;
         color: #000000;
         font-weight: 600;
+        font-size: 20px;
+        &.figma{
+          background: #000;
+          color: #ffffff!important;
+          display: inline-block;
+          border-radius: 12px;
+          padding: 18px 18px;
+          margin-top: 0px;
+          font-weight: 500;
+          margin-bottom: 30px;
+          border: 1px solid #000000;
+        }
+        &.insta{
+          margin-left: 20px;
+          display: inline-block;
+          border: 1px solid #000000;
+          color: #000000;
+          padding: 18px 18px;
+          border-radius: 12px;
+          margin-top: 0px;
+          font-weight: 500;
+          margin-bottom: 30px;
+        }
       }
     }
   }
 }
+
+
 
 .center
 {
