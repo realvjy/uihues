@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Soon from '../components/coming-soon'
+import Soon from '../components/soon'
 
 
 

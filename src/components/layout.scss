@@ -355,16 +355,39 @@ YOU CAN USE LIKE IT TOO :d
   height: 100%;
   width: 100%;
   .soon_wrapper{
-    background: $white;
     padding: 64px;
     margin: 80px;
     padding-bottom: 44px;
     border-radius: 36px;
-    -webkit-box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
-    box-shadow: 0 24px 64px -2px rgba(0,0,0,0.3);
+
     @media (max-width: 768px){
        margin: 0;
+    }
+    .sooon{
+      text-align: center;
+      color: $white;
+      .si{
+        margin-top: 32px;
+        letter-spacing: 3px;
+      }
+      .fc{
+        display: inline-block;
+        margin-top: 24px;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+      }
+      a{
+
+      }
+      img{
+        height: 32px;
+      }
+      p{
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 130%;
+      }
     }
 
     .soon_details{
@@ -374,9 +397,10 @@ YOU CAN USE LIKE IT TOO :d
         height: 60px;
       }
       p{
+        text-align: center;
         margin-top: 32px;
         margin-bottom: 34px;
-        font-size: 22px;
+        font-size: 24px;
         font-weight: 300;
         line-height: 160%;
         @media (max-width: $tablet-wide){
